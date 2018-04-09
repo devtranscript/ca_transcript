@@ -1,0 +1,1407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_javsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.AccessModeModifierType' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="AccessModeModifierType">
+          <Property Name="AccessModeModifierType_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.Address' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Address_ID" />
+          </Key>
+          <Property Name="Address_ID" Type="int" Nullable="false" />
+          <Property Name="Party_ID" Type="int" />
+          <Property Name="LineOne" Type="varchar" MaxLength="50" />
+          <Property Name="LineTwo" Type="varchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="CityPrimary" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.BlobType' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="BlobType">
+          <Key>
+            <PropertyRef Name="BlobType_ID" />
+          </Key>
+          <Property Name="BlobType_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Camera' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Camera">
+          <Property Name="Camera_ID" Type="int" />
+          <Property Name="Mixer_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Number" Type="nchar" MaxLength="10" />
+          <Property Name="Available" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Capabilities' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Capabilities">
+          <Property Name="Capabilities_ID" Type="int" />
+          <Property Name="Device_ID" Type="nchar" MaxLength="10" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+          <Property Name="IPPort" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Culture' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Culture">
+          <Property Name="Culture" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Device' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Device">
+          <Property Name="Device_ID" Type="int" />
+          <Property Name="DeviceType_ID" Type="int" />
+          <Property Name="DeviceTypeSpécficNumber" Type="nchar" MaxLength="10" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="IPAddress" Type="nchar" MaxLength="10" />
+          <Property Name="IPPort" Type="nchar" MaxLength="10" />
+          <Property Name="UserName" Type="nchar" MaxLength="10" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+          <Property Name="HostName" Type="nchar" MaxLength="10" />
+          <Property Name="Location_ID" Type="int" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.DeviceType' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="DeviceType">
+          <Property Name="DeviceType_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.Email' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="Emaio_ID" />
+          </Key>
+          <Property Name="Emaio_ID" Type="int" Nullable="false" />
+          <Property Name="Party_ID" Type="int" />
+          <Property Name="EmailAddressPrimary" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Event' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Event">
+          <Property Name="Event_ID" Type="int" />
+          <Property Name="EventType_ID" Type="int" />
+          <Property Name="Session_ID" Type="int" />
+          <Property Name="Identifier" Type="nchar" MaxLength="10" />
+          <Property Name="MasterGroup_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Private" Type="nchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.EventNote' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="EventNote">
+          <Property Name="EventNote_ID" Type="int" />
+          <Property Name="Event_ID" Type="int" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="Note" Type="varchar" MaxLength="50" />
+          <Property Name="Private" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.EventType' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="EventType">
+          <Property Name="EventType_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Icon" Type="nchar" MaxLength="10" />
+          <Property Name="IconTwo" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.EventTypeCategory' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="EventTypeCategory">
+          <Property Name="EventTypeCategory_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+          <Property Name="SystemEvent" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Exhibit' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Exhibit">
+          <Property Name="Exhibit_ID" Type="int" />
+          <Property Name="Master_ID" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="FileName" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="date" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.File' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="File">
+          <Property Name="Identifier" Type="nchar" MaxLength="10" />
+          <Property Name="File" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.Group' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Group_ID" />
+          </Key>
+          <Property Name="Group_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="SystemProvider" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.GroupsSecurityRight' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="GroupsSecurityRight">
+          <Key>
+            <PropertyRef Name="Group_ID" />
+            <PropertyRef Name="SecurityRight_ID" />
+          </Key>
+          <Property Name="Group_ID" Type="int" Nullable="false" />
+          <Property Name="SecurityRight_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.GUILayout' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="GUILayout">
+          <Key>
+            <PropertyRef Name="GUILayout_ID" />
+          </Key>
+          <Property Name="GUILayout_ID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Location' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Location">
+          <Property Name="Location_ID" Type="int" />
+          <Property Name="ParentLocation_id" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="nchar" MaxLength="10" />
+          <Property Name="Address_ID" Type="int" />
+          <Property Name="Phone_ID" Type="int" />
+          <Property Name="email_ID" Type="int" />
+          <Property Name="AllowLogin" Type="nchar" MaxLength="10" />
+          <Property Name="image" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Master' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Master">
+          <Property Name="Master_ID" Type="int" />
+          <Property Name="ID" Type="nchar" MaxLength="10" />
+          <Property Name="Title" Type="nchar" MaxLength="10" />
+          <Property Name="Sealed" Type="nchar" MaxLength="10" />
+          <Property Name="Expunged" Type="nchar" MaxLength="10" />
+          <Property Name="Pack_ID" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.MasterExtraField' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="MasterExtraField">
+          <Property Name="MasterExtraField_ID" Type="int" />
+          <Property Name="Master_ID" Type="int" />
+          <Property Name="Value" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.MasterExtraFieldType' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="MasterExtraFieldType">
+          <Property Name="MasterExtraFieldType_ID" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.MasterGroup' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="MasterGroup">
+          <Key>
+            <PropertyRef Name="MasterGroup_ID" />
+          </Key>
+          <Property Name="MasterGroup_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Order" Type="varchar" MaxLength="50" />
+          <Property Name="Logable" Type="varchar" MaxLength="50" />
+          <Property Name="Limit" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.MasterGroupLoggedReason' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="MasterGroupLoggedReason">
+          <Key>
+            <PropertyRef Name="MasterGroupLoggedReason_ID" />
+          </Key>
+          <Property Name="MasterGroupLoggedReason_ID" Type="int" Nullable="false" />
+          <Property Name="MasterGroup_ID" Type="int" />
+          <Property Name="Reason" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.MasterType' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="MasterType">
+          <Key>
+            <PropertyRef Name="MasterType_ID" />
+          </Key>
+          <Property Name="MasterType_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Active" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.MasterTypesMasterGroup' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="MasterTypesMasterGroup">
+          <Key>
+            <PropertyRef Name="MasterType_ID" />
+          </Key>
+          <Property Name="MasterType_ID" Type="int" Nullable="false" />
+          <Property Name="MasterGroup_ID" Type="int" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.MasterTypesProceedingMenu' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="MasterTypesProceedingMenu">
+          <Key>
+            <PropertyRef Name="MasterType_ID" />
+            <PropertyRef Name="ProceedingMenu_ID" />
+          </Key>
+          <Property Name="MasterType_ID" Type="int" Nullable="false" />
+          <Property Name="ProceedingMenu_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Microphone' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Microphone">
+          <Property Name="Microphone_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Number" Type="nchar" MaxLength="10" />
+          <Property Name="Available" Type="nchar" MaxLength="10" />
+          <Property Name="OnScreenDisplay" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Mixer' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Mixer">
+          <Property Name="Mixer_ID" Type="int" />
+          <Property Name="Device_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+          <Property Name="AutoRevertModeToNormal" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Mode' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Mode">
+          <Property Name="Mode_ID" Type="int" />
+          <Property Name="Mixer_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Available" Type="nchar" MaxLength="10" />
+          <Property Name="AccessModeModifierType_ID" Type="int" />
+          <Property Name="Icon" Type="nchar" MaxLength="10" />
+          <Property Name="Number" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.OnScreenDisplay' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="OnScreenDisplay">
+          <Property Name="OnScreenDisplay_ID" Type="int" />
+          <Property Name="Mixer_ID" Type="int" />
+          <Property Name="OnScreenDisplayType_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Number" Type="nchar" MaxLength="10" />
+          <Property Name="Value" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.OnScreenDisplayType' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="OnScreenDisplayType">
+          <Property Name="OnScreenDisplayType_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.Pack' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Pack">
+          <Key>
+            <PropertyRef Name="Pack_ID" />
+          </Key>
+          <Property Name="Pack_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.Party' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Party">
+          <Key>
+            <PropertyRef Name="Party_ID" />
+          </Key>
+          <Property Name="Party_ID" Type="int" Nullable="false" />
+          <Property Name="Identifier" Type="varchar" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleInitial" Type="varchar" MaxLength="50" />
+          <Property Name="Prefix" Type="varchar" MaxLength="50" />
+          <Property Name="Suffix" Type="varchar" MaxLength="50" />
+          <Property Name="BirthDate" Type="varchar" MaxLength="50" />
+          <Property Name="Active" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.PartyBlob' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PartyBlob">
+          <Key>
+            <PropertyRef Name="PartyBlob_ID" />
+            <PropertyRef Name="Party_ID" />
+          </Key>
+          <Property Name="PartyBlob_ID" Type="int" Nullable="false" />
+          <Property Name="Party_ID" Type="int" Nullable="false" />
+          <Property Name="BlobType_ID" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Blob" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.PartysType' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PartysType">
+          <Key>
+            <PropertyRef Name="Party_ID" />
+            <PropertyRef Name="PartyType_ID" />
+          </Key>
+          <Property Name="Party_ID" Type="int" Nullable="false" />
+          <Property Name="PartyType_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.PartyType' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PartyType">
+          <Key>
+            <PropertyRef Name="PartyType_ID" />
+          </Key>
+          <Property Name="PartyType_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.PartyTypeAllowed' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PartyTypeAllowed">
+          <Key>
+            <PropertyRef Name="MasterGroup_ID" />
+            <PropertyRef Name="PartyType_ID" />
+          </Key>
+          <Property Name="MasterGroup_ID" Type="int" Nullable="false" />
+          <Property Name="PartyType_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.Phone' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Phone">
+          <Key>
+            <PropertyRef Name="Phone_ID" />
+          </Key>
+          <Property Name="Phone_ID" Type="int" Nullable="false" />
+          <Property Name="Party_ID" Type="int" />
+          <Property Name="NumberPrimary" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.PreferenceType' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PreferenceType">
+          <Key>
+            <PropertyRef Name="PreferenceType_ID" />
+          </Key>
+          <Property Name="PreferenceType_ID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.Proceeding' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Proceeding">
+          <Key>
+            <PropertyRef Name="Proceeding_ID" />
+            <PropertyRef Name="ProceedingMenu_ID" />
+          </Key>
+          <Property Name="Proceeding_ID" Type="int" Nullable="false" />
+          <Property Name="ProceedingMenu_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Orders" Type="int" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.ProceedingMenu' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ProceedingMenu">
+          <Key>
+            <PropertyRef Name="ProceedingMenu_ID" />
+          </Key>
+          <Property Name="ProceedingMenu_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="User_ID" Type="int" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.Schedule' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="MasterType_ID" />
+          </Key>
+          <Property Name="Schedule_ID" Type="int" />
+          <Property Name="Master_ID" Type="int" />
+          <Property Name="Location_ID" Type="int" />
+          <Property Name="MasterType_ID" Type="int" Nullable="false" />
+          <Property Name="StarDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="Notes" Type="nchar" MaxLength="10" />
+          <Property Name="AutoStart" Type="nchar" MaxLength="10" />
+          <Property Name="AutoStop" Type="nchar" MaxLength="10" />
+          <Property Name="Completed" Type="nchar" MaxLength="10" />
+          <Property Name="Order" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.SchedulePartyInvolved' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="SchedulePartyInvolved">
+          <Property Name="SchedulePartyInvolved_ID" Type="int" />
+          <Property Name="Schedule_ID" Type="int" />
+          <Property Name="Party_ID" Type="int" />
+          <Property Name="MasterGroup_ID" Type="int" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.SecurityRight' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="SecurityRight">
+          <Key>
+            <PropertyRef Name="SecurityRight_ID" />
+          </Key>
+          <Property Name="SecurityRight_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Session' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Session">
+          <Property Name="Session_ID" Type="int" />
+          <Property Name="Master_ID" Type="int" />
+          <Property Name="Location_ID" Type="int" />
+          <Property Name="MasterType_ID" Type="int" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="ModifiedBy" Type="nchar" MaxLength="10" />
+          <Property Name="StarDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="UTCOffSet" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.SessionMediaInfo' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="SessionMediaInfo">
+          <Property Name="SessionMediaInfo_ID" Type="int" />
+          <Property Name="Session_ID" Type="int" />
+          <Property Name="Device_ID" Type="int" />
+          <Property Name="Duration" Type="nchar" MaxLength="10" />
+          <Property Name="Size" Type="nchar" MaxLength="10" />
+          <Property Name="Height" Type="nchar" MaxLength="10" />
+          <Property Name="Width" Type="nchar" MaxLength="10" />
+          <Property Name="VideoBitRate" Type="nchar" MaxLength="10" />
+          <Property Name="AudioBitRate" Type="nchar" MaxLength="10" />
+          <Property Name="Incomplete" Type="nchar" MaxLength="10" />
+          <Property Name="Archived" Type="nchar" MaxLength="10" />
+          <Property Name="ArchivedLocation" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.SessionMicTally' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="SessionMicTally">
+          <Property Name="SessionMicTally_ID" Type="int" />
+          <Property Name="Session_ID" Type="int" />
+          <Property Name="MicName" Type="nchar" MaxLength="10" />
+          <Property Name="MicNumber" Type="nchar" MaxLength="10" />
+          <Property Name="On" Type="nchar" MaxLength="10" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.SessionPartyInvolved' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="SessionPartyInvolved">
+          <Property Name="SessionPartyInvolved_ID" Type="int" />
+          <Property Name="Session_ID" Type="int" />
+          <Property Name="Party_ID" Type="int" />
+          <Property Name="MasterGroup_ID" Type="int" />
+          <Property Name="Logged" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Translation' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Translation">
+          <Property Name="English" Type="nchar" MaxLength="10" />
+          <Property Name="Culture" Type="nchar" MaxLength="10" />
+          <Property Name="Text" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.User' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Party_ID" Type="int" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="AccountDisable" Type="bit" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.User_GUILayout' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="User_GUILayout">
+          <Key>
+            <PropertyRef Name="User_GUILayout_ID" />
+            <PropertyRef Name="GUILayout_ID" />
+          </Key>
+          <Property Name="User_GUILayout_ID" Type="int" Nullable="false" />
+          <Property Name="ParentUser_GUILayout_ID" Type="int" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="GUILayout_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Layout" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_javs.dbo.UserPreference' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="UserPreference">
+          <Key>
+            <PropertyRef Name="UserPreference_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="PreferenceType_ID" />
+          </Key>
+          <Property Name="UserPreference_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="PreferenceType_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.UsersGroup' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="UsersGroup">
+          <Property Name="User_ID" Type="int" />
+          <Property Name="Group_ID" Type="int" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.UsersPack' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="UsersPack">
+          <Property Name="User_ID" Type="int" />
+          <Property Name="Pack_ID" Type="int" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.Version' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="Version">
+          <Property Name="Version_ID" Type="int" />
+          <Property Name="VersionType_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Major" Type="nchar" MaxLength="10" />
+          <Property Name="Minor" Type="nchar" MaxLength="10" />
+          <Property Name="File" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'db_javs.dbo.VersionType' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="VersionType">
+          <Property Name="VersionType_ID" Type="int" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nchar" MaxLength="10" />
+        </EntityType>-->
+        <EntityContainer Name="db_javsModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Address" EntityType="Self.Address" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Address].[Address_ID] AS [Address_ID], 
+    [Address].[Party_ID] AS [Party_ID], 
+    [Address].[LineOne] AS [LineOne], 
+    [Address].[LineTwo] AS [LineTwo], 
+    [Address].[ZipCode] AS [ZipCode], 
+    [Address].[State] AS [State], 
+    [Address].[CityPrimary] AS [CityPrimary]
+    FROM [dbo].[Address] AS [Address]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BlobType" EntityType="Self.BlobType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BlobType].[BlobType_ID] AS [BlobType_ID], 
+    [BlobType].[Name] AS [Name], 
+    [BlobType].[Description] AS [Description]
+    FROM [dbo].[BlobType] AS [BlobType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Email" EntityType="Self.Email" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Email].[Emaio_ID] AS [Emaio_ID], 
+    [Email].[Party_ID] AS [Party_ID], 
+    [Email].[EmailAddressPrimary] AS [EmailAddressPrimary]
+    FROM [dbo].[Email] AS [Email]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Group" EntityType="Self.Group" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Group].[Group_ID] AS [Group_ID], 
+    [Group].[Name] AS [Name], 
+    [Group].[Description] AS [Description], 
+    [Group].[SystemProvider] AS [SystemProvider]
+    FROM [dbo].[Group] AS [Group]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GroupsSecurityRight" EntityType="Self.GroupsSecurityRight" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GroupsSecurityRight].[Group_ID] AS [Group_ID], 
+    [GroupsSecurityRight].[SecurityRight_ID] AS [SecurityRight_ID]
+    FROM [dbo].[GroupsSecurityRight] AS [GroupsSecurityRight]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GUILayout" EntityType="Self.GUILayout" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GUILayout].[GUILayout_ID] AS [GUILayout_ID], 
+    [GUILayout].[Description] AS [Description]
+    FROM [dbo].[GUILayout] AS [GUILayout]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MasterGroup" EntityType="Self.MasterGroup" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MasterGroup].[MasterGroup_ID] AS [MasterGroup_ID], 
+    [MasterGroup].[Name] AS [Name], 
+    [MasterGroup].[Order] AS [Order], 
+    [MasterGroup].[Logable] AS [Logable], 
+    [MasterGroup].[Limit] AS [Limit]
+    FROM [dbo].[MasterGroup] AS [MasterGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MasterGroupLoggedReason" EntityType="Self.MasterGroupLoggedReason" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MasterGroupLoggedReason].[MasterGroupLoggedReason_ID] AS [MasterGroupLoggedReason_ID], 
+    [MasterGroupLoggedReason].[MasterGroup_ID] AS [MasterGroup_ID], 
+    [MasterGroupLoggedReason].[Reason] AS [Reason]
+    FROM [dbo].[MasterGroupLoggedReason] AS [MasterGroupLoggedReason]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MasterType" EntityType="Self.MasterType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MasterType].[MasterType_ID] AS [MasterType_ID], 
+    [MasterType].[Name] AS [Name], 
+    [MasterType].[Description] AS [Description], 
+    [MasterType].[Active] AS [Active]
+    FROM [dbo].[MasterType] AS [MasterType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MasterTypesMasterGroup" EntityType="Self.MasterTypesMasterGroup" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MasterTypesMasterGroup].[MasterType_ID] AS [MasterType_ID], 
+    [MasterTypesMasterGroup].[MasterGroup_ID] AS [MasterGroup_ID]
+    FROM [dbo].[MasterTypesMasterGroup] AS [MasterTypesMasterGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MasterTypesProceedingMenu" EntityType="Self.MasterTypesProceedingMenu" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MasterTypesProceedingMenu].[MasterType_ID] AS [MasterType_ID], 
+    [MasterTypesProceedingMenu].[ProceedingMenu_ID] AS [ProceedingMenu_ID]
+    FROM [dbo].[MasterTypesProceedingMenu] AS [MasterTypesProceedingMenu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Pack" EntityType="Self.Pack" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Pack].[Pack_ID] AS [Pack_ID], 
+    [Pack].[Name] AS [Name], 
+    [Pack].[Description] AS [Description]
+    FROM [dbo].[Pack] AS [Pack]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Party" EntityType="Self.Party" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Party].[Party_ID] AS [Party_ID], 
+    [Party].[Identifier] AS [Identifier], 
+    [Party].[FirstName] AS [FirstName], 
+    [Party].[LastName] AS [LastName], 
+    [Party].[MiddleInitial] AS [MiddleInitial], 
+    [Party].[Prefix] AS [Prefix], 
+    [Party].[Suffix] AS [Suffix], 
+    [Party].[BirthDate] AS [BirthDate], 
+    [Party].[Active] AS [Active]
+    FROM [dbo].[Party] AS [Party]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PartyBlob" EntityType="Self.PartyBlob" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PartyBlob].[PartyBlob_ID] AS [PartyBlob_ID], 
+    [PartyBlob].[Party_ID] AS [Party_ID], 
+    [PartyBlob].[BlobType_ID] AS [BlobType_ID], 
+    [PartyBlob].[Name] AS [Name], 
+    [PartyBlob].[Blob] AS [Blob]
+    FROM [dbo].[PartyBlob] AS [PartyBlob]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PartysType" EntityType="Self.PartysType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PartysType].[Party_ID] AS [Party_ID], 
+    [PartysType].[PartyType_ID] AS [PartyType_ID]
+    FROM [dbo].[PartysType] AS [PartysType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PartyType" EntityType="Self.PartyType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PartyType].[PartyType_ID] AS [PartyType_ID], 
+    [PartyType].[Name] AS [Name], 
+    [PartyType].[Description] AS [Description]
+    FROM [dbo].[PartyType] AS [PartyType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PartyTypeAllowed" EntityType="Self.PartyTypeAllowed" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PartyTypeAllowed].[MasterGroup_ID] AS [MasterGroup_ID], 
+    [PartyTypeAllowed].[PartyType_ID] AS [PartyType_ID]
+    FROM [dbo].[PartyTypeAllowed] AS [PartyTypeAllowed]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Phone" EntityType="Self.Phone" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Phone].[Phone_ID] AS [Phone_ID], 
+    [Phone].[Party_ID] AS [Party_ID], 
+    [Phone].[NumberPrimary] AS [NumberPrimary]
+    FROM [dbo].[Phone] AS [Phone]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PreferenceType" EntityType="Self.PreferenceType" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PreferenceType].[PreferenceType_ID] AS [PreferenceType_ID], 
+    [PreferenceType].[Description] AS [Description]
+    FROM [dbo].[PreferenceType] AS [PreferenceType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Proceeding" EntityType="Self.Proceeding" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Proceeding].[Proceeding_ID] AS [Proceeding_ID], 
+    [Proceeding].[ProceedingMenu_ID] AS [ProceedingMenu_ID], 
+    [Proceeding].[Name] AS [Name], 
+    [Proceeding].[Description] AS [Description], 
+    [Proceeding].[Orders] AS [Orders]
+    FROM [dbo].[Proceeding] AS [Proceeding]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProceedingMenu" EntityType="Self.ProceedingMenu" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProceedingMenu].[ProceedingMenu_ID] AS [ProceedingMenu_ID], 
+    [ProceedingMenu].[Name] AS [Name], 
+    [ProceedingMenu].[Description] AS [Description], 
+    [ProceedingMenu].[User_ID] AS [User_ID]
+    FROM [dbo].[ProceedingMenu] AS [ProceedingMenu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Schedule].[Schedule_ID] AS [Schedule_ID], 
+    [Schedule].[Master_ID] AS [Master_ID], 
+    [Schedule].[Location_ID] AS [Location_ID], 
+    [Schedule].[MasterType_ID] AS [MasterType_ID], 
+    [Schedule].[StarDate] AS [StarDate], 
+    [Schedule].[EndDate] AS [EndDate], 
+    [Schedule].[Notes] AS [Notes], 
+    [Schedule].[AutoStart] AS [AutoStart], 
+    [Schedule].[AutoStop] AS [AutoStop], 
+    [Schedule].[Completed] AS [Completed], 
+    [Schedule].[Order] AS [Order], 
+    [Schedule].[CreatedDate] AS [CreatedDate], 
+    [Schedule].[ModifiedDate] AS [ModifiedDate], 
+    [Schedule].[ModifiedBy] AS [ModifiedBy]
+    FROM [dbo].[Schedule] AS [Schedule]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SecurityRight" EntityType="Self.SecurityRight" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SecurityRight].[SecurityRight_ID] AS [SecurityRight_ID], 
+    [SecurityRight].[Name] AS [Name], 
+    [SecurityRight].[Description] AS [Description]
+    FROM [dbo].[SecurityRight] AS [SecurityRight]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User].[User_ID] AS [User_ID], 
+    [User].[Party_ID] AS [Party_ID], 
+    [User].[UserName] AS [UserName], 
+    [User].[Password] AS [Password], 
+    [User].[AccountDisable] AS [AccountDisable]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User_GUILayout" EntityType="Self.User_GUILayout" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User_GUILayout].[User_GUILayout_ID] AS [User_GUILayout_ID], 
+    [User_GUILayout].[ParentUser_GUILayout_ID] AS [ParentUser_GUILayout_ID], 
+    [User_GUILayout].[User_ID] AS [User_ID], 
+    [User_GUILayout].[GUILayout_ID] AS [GUILayout_ID], 
+    [User_GUILayout].[Name] AS [Name], 
+    [User_GUILayout].[Layout] AS [Layout]
+    FROM [dbo].[User_GUILayout] AS [User_GUILayout]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserPreference" EntityType="Self.UserPreference" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserPreference].[UserPreference_ID] AS [UserPreference_ID], 
+    [UserPreference].[User_ID] AS [User_ID], 
+    [UserPreference].[PreferenceType_ID] AS [PreferenceType_ID]
+    FROM [dbo].[UserPreference] AS [UserPreference]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_javsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Address_ID" />
+          </Key>
+          <Property Name="Address_ID" Type="Int32" Nullable="false" />
+          <Property Name="Party_ID" Type="Int32" />
+          <Property Name="LineOne" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LineTwo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CityPrimary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BlobType">
+          <Key>
+            <PropertyRef Name="BlobType_ID" />
+          </Key>
+          <Property Name="BlobType_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="Emaio_ID" />
+          </Key>
+          <Property Name="Emaio_ID" Type="Int32" Nullable="false" />
+          <Property Name="Party_ID" Type="Int32" />
+          <Property Name="EmailAddressPrimary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Group_ID" />
+          </Key>
+          <Property Name="Group_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SystemProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="GroupsSecurityRight">
+          <Key>
+            <PropertyRef Name="Group_ID" />
+            <PropertyRef Name="SecurityRight_ID" />
+          </Key>
+          <Property Name="Group_ID" Type="Int32" Nullable="false" />
+          <Property Name="SecurityRight_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GUILayout">
+          <Key>
+            <PropertyRef Name="GUILayout_ID" />
+          </Key>
+          <Property Name="GUILayout_ID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MasterGroup">
+          <Key>
+            <PropertyRef Name="MasterGroup_ID" />
+          </Key>
+          <Property Name="MasterGroup_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Order" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Logable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Limit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MasterGroupLoggedReason">
+          <Key>
+            <PropertyRef Name="MasterGroupLoggedReason_ID" />
+          </Key>
+          <Property Name="MasterGroupLoggedReason_ID" Type="Int32" Nullable="false" />
+          <Property Name="MasterGroup_ID" Type="Int32" />
+          <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MasterType">
+          <Key>
+            <PropertyRef Name="MasterType_ID" />
+          </Key>
+          <Property Name="MasterType_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MasterTypesMasterGroup">
+          <Key>
+            <PropertyRef Name="MasterType_ID" />
+          </Key>
+          <Property Name="MasterType_ID" Type="Int32" Nullable="false" />
+          <Property Name="MasterGroup_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MasterTypesProceedingMenu">
+          <Key>
+            <PropertyRef Name="MasterType_ID" />
+            <PropertyRef Name="ProceedingMenu_ID" />
+          </Key>
+          <Property Name="MasterType_ID" Type="Int32" Nullable="false" />
+          <Property Name="ProceedingMenu_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pack">
+          <Key>
+            <PropertyRef Name="Pack_ID" />
+          </Key>
+          <Property Name="Pack_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Party">
+          <Key>
+            <PropertyRef Name="Party_ID" />
+          </Key>
+          <Property Name="Party_ID" Type="Int32" Nullable="false" />
+          <Property Name="Identifier" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleInitial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Suffix" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PartyBlob">
+          <Key>
+            <PropertyRef Name="PartyBlob_ID" />
+            <PropertyRef Name="Party_ID" />
+          </Key>
+          <Property Name="PartyBlob_ID" Type="Int32" Nullable="false" />
+          <Property Name="Party_ID" Type="Int32" Nullable="false" />
+          <Property Name="BlobType_ID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Blob" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PartysType">
+          <Key>
+            <PropertyRef Name="Party_ID" />
+            <PropertyRef Name="PartyType_ID" />
+          </Key>
+          <Property Name="Party_ID" Type="Int32" Nullable="false" />
+          <Property Name="PartyType_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PartyType">
+          <Key>
+            <PropertyRef Name="PartyType_ID" />
+          </Key>
+          <Property Name="PartyType_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PartyTypeAllowed">
+          <Key>
+            <PropertyRef Name="MasterGroup_ID" />
+            <PropertyRef Name="PartyType_ID" />
+          </Key>
+          <Property Name="MasterGroup_ID" Type="Int32" Nullable="false" />
+          <Property Name="PartyType_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Phone">
+          <Key>
+            <PropertyRef Name="Phone_ID" />
+          </Key>
+          <Property Name="Phone_ID" Type="Int32" Nullable="false" />
+          <Property Name="Party_ID" Type="Int32" />
+          <Property Name="NumberPrimary" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PreferenceType">
+          <Key>
+            <PropertyRef Name="PreferenceType_ID" />
+          </Key>
+          <Property Name="PreferenceType_ID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Proceeding">
+          <Key>
+            <PropertyRef Name="Proceeding_ID" />
+            <PropertyRef Name="ProceedingMenu_ID" />
+          </Key>
+          <Property Name="Proceeding_ID" Type="Int32" Nullable="false" />
+          <Property Name="ProceedingMenu_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Orders" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ProceedingMenu">
+          <Key>
+            <PropertyRef Name="ProceedingMenu_ID" />
+          </Key>
+          <Property Name="ProceedingMenu_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="MasterType_ID" />
+          </Key>
+          <Property Name="Schedule_ID" Type="Int32" />
+          <Property Name="Master_ID" Type="Int32" />
+          <Property Name="Location_ID" Type="Int32" />
+          <Property Name="MasterType_ID" Type="Int32" Nullable="false" />
+          <Property Name="StarDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="Notes" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AutoStart" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AutoStop" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Completed" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Order" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SecurityRight">
+          <Key>
+            <PropertyRef Name="SecurityRight_ID" />
+          </Key>
+          <Property Name="SecurityRight_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="Party_ID" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountDisable" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="User_GUILayout">
+          <Key>
+            <PropertyRef Name="User_GUILayout_ID" />
+            <PropertyRef Name="GUILayout_ID" />
+          </Key>
+          <Property Name="User_GUILayout_ID" Type="Int32" Nullable="false" />
+          <Property Name="ParentUser_GUILayout_ID" Type="Int32" />
+          <Property Name="User_ID" Type="Int32" />
+          <Property Name="GUILayout_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Layout" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserPreference">
+          <Key>
+            <PropertyRef Name="UserPreference_ID" />
+            <PropertyRef Name="User_ID" />
+            <PropertyRef Name="PreferenceType_ID" />
+          </Key>
+          <Property Name="UserPreference_ID" Type="Int32" Nullable="false" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="PreferenceType_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="db_javsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Address" EntityType="Self.Address" />
+          <EntitySet Name="BlobType" EntityType="Self.BlobType" />
+          <EntitySet Name="Email" EntityType="Self.Email" />
+          <EntitySet Name="Group" EntityType="Self.Group" />
+          <EntitySet Name="GroupsSecurityRight" EntityType="Self.GroupsSecurityRight" />
+          <EntitySet Name="GUILayout" EntityType="Self.GUILayout" />
+          <EntitySet Name="MasterGroup" EntityType="Self.MasterGroup" />
+          <EntitySet Name="MasterGroupLoggedReason" EntityType="Self.MasterGroupLoggedReason" />
+          <EntitySet Name="MasterType" EntityType="Self.MasterType" />
+          <EntitySet Name="MasterTypesMasterGroup" EntityType="Self.MasterTypesMasterGroup" />
+          <EntitySet Name="MasterTypesProceedingMenu" EntityType="Self.MasterTypesProceedingMenu" />
+          <EntitySet Name="Pack" EntityType="Self.Pack" />
+          <EntitySet Name="Party" EntityType="Self.Party" />
+          <EntitySet Name="PartyBlob" EntityType="Self.PartyBlob" />
+          <EntitySet Name="PartysType" EntityType="Self.PartysType" />
+          <EntitySet Name="PartyType" EntityType="Self.PartyType" />
+          <EntitySet Name="PartyTypeAllowed" EntityType="Self.PartyTypeAllowed" />
+          <EntitySet Name="Phone" EntityType="Self.Phone" />
+          <EntitySet Name="PreferenceType" EntityType="Self.PreferenceType" />
+          <EntitySet Name="Proceeding" EntityType="Self.Proceeding" />
+          <EntitySet Name="ProceedingMenu" EntityType="Self.ProceedingMenu" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" />
+          <EntitySet Name="SecurityRight" EntityType="Self.SecurityRight" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="User_GUILayout" EntityType="Self.User_GUILayout" />
+          <EntitySet Name="UserPreference" EntityType="Self.UserPreference" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_javsModelStoreContainer" CdmEntityContainer="db_javsEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="db_javsModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="db_javsModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Address_ID" ColumnName="Address_ID" />
+                <ScalarProperty Name="Party_ID" ColumnName="Party_ID" />
+                <ScalarProperty Name="LineOne" ColumnName="LineOne" />
+                <ScalarProperty Name="LineTwo" ColumnName="LineTwo" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CityPrimary" ColumnName="CityPrimary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlobType">
+            <EntityTypeMapping TypeName="db_javsModel.BlobType">
+              <MappingFragment StoreEntitySet="BlobType">
+                <ScalarProperty Name="BlobType_ID" ColumnName="BlobType_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Email">
+            <EntityTypeMapping TypeName="db_javsModel.Email">
+              <MappingFragment StoreEntitySet="Email">
+                <ScalarProperty Name="Emaio_ID" ColumnName="Emaio_ID" />
+                <ScalarProperty Name="Party_ID" ColumnName="Party_ID" />
+                <ScalarProperty Name="EmailAddressPrimary" ColumnName="EmailAddressPrimary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group">
+            <EntityTypeMapping TypeName="db_javsModel.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SystemProvider" ColumnName="SystemProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupsSecurityRight">
+            <EntityTypeMapping TypeName="db_javsModel.GroupsSecurityRight">
+              <MappingFragment StoreEntitySet="GroupsSecurityRight">
+                <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+                <ScalarProperty Name="SecurityRight_ID" ColumnName="SecurityRight_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GUILayout">
+            <EntityTypeMapping TypeName="db_javsModel.GUILayout">
+              <MappingFragment StoreEntitySet="GUILayout">
+                <ScalarProperty Name="GUILayout_ID" ColumnName="GUILayout_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterGroup">
+            <EntityTypeMapping TypeName="db_javsModel.MasterGroup">
+              <MappingFragment StoreEntitySet="MasterGroup">
+                <ScalarProperty Name="MasterGroup_ID" ColumnName="MasterGroup_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Logable" ColumnName="Logable" />
+                <ScalarProperty Name="Limit" ColumnName="Limit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterGroupLoggedReason">
+            <EntityTypeMapping TypeName="db_javsModel.MasterGroupLoggedReason">
+              <MappingFragment StoreEntitySet="MasterGroupLoggedReason">
+                <ScalarProperty Name="MasterGroupLoggedReason_ID" ColumnName="MasterGroupLoggedReason_ID" />
+                <ScalarProperty Name="MasterGroup_ID" ColumnName="MasterGroup_ID" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterType">
+            <EntityTypeMapping TypeName="db_javsModel.MasterType">
+              <MappingFragment StoreEntitySet="MasterType">
+                <ScalarProperty Name="MasterType_ID" ColumnName="MasterType_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterTypesMasterGroup">
+            <EntityTypeMapping TypeName="db_javsModel.MasterTypesMasterGroup">
+              <MappingFragment StoreEntitySet="MasterTypesMasterGroup">
+                <ScalarProperty Name="MasterType_ID" ColumnName="MasterType_ID" />
+                <ScalarProperty Name="MasterGroup_ID" ColumnName="MasterGroup_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterTypesProceedingMenu">
+            <EntityTypeMapping TypeName="db_javsModel.MasterTypesProceedingMenu">
+              <MappingFragment StoreEntitySet="MasterTypesProceedingMenu">
+                <ScalarProperty Name="MasterType_ID" ColumnName="MasterType_ID" />
+                <ScalarProperty Name="ProceedingMenu_ID" ColumnName="ProceedingMenu_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pack">
+            <EntityTypeMapping TypeName="db_javsModel.Pack">
+              <MappingFragment StoreEntitySet="Pack">
+                <ScalarProperty Name="Pack_ID" ColumnName="Pack_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Party">
+            <EntityTypeMapping TypeName="db_javsModel.Party">
+              <MappingFragment StoreEntitySet="Party">
+                <ScalarProperty Name="Party_ID" ColumnName="Party_ID" />
+                <ScalarProperty Name="Identifier" ColumnName="Identifier" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleInitial" ColumnName="MiddleInitial" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartyBlob">
+            <EntityTypeMapping TypeName="db_javsModel.PartyBlob">
+              <MappingFragment StoreEntitySet="PartyBlob">
+                <ScalarProperty Name="PartyBlob_ID" ColumnName="PartyBlob_ID" />
+                <ScalarProperty Name="Party_ID" ColumnName="Party_ID" />
+                <ScalarProperty Name="BlobType_ID" ColumnName="BlobType_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Blob" ColumnName="Blob" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartysType">
+            <EntityTypeMapping TypeName="db_javsModel.PartysType">
+              <MappingFragment StoreEntitySet="PartysType">
+                <ScalarProperty Name="Party_ID" ColumnName="Party_ID" />
+                <ScalarProperty Name="PartyType_ID" ColumnName="PartyType_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartyType">
+            <EntityTypeMapping TypeName="db_javsModel.PartyType">
+              <MappingFragment StoreEntitySet="PartyType">
+                <ScalarProperty Name="PartyType_ID" ColumnName="PartyType_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartyTypeAllowed">
+            <EntityTypeMapping TypeName="db_javsModel.PartyTypeAllowed">
+              <MappingFragment StoreEntitySet="PartyTypeAllowed">
+                <ScalarProperty Name="MasterGroup_ID" ColumnName="MasterGroup_ID" />
+                <ScalarProperty Name="PartyType_ID" ColumnName="PartyType_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Phone">
+            <EntityTypeMapping TypeName="db_javsModel.Phone">
+              <MappingFragment StoreEntitySet="Phone">
+                <ScalarProperty Name="Phone_ID" ColumnName="Phone_ID" />
+                <ScalarProperty Name="Party_ID" ColumnName="Party_ID" />
+                <ScalarProperty Name="NumberPrimary" ColumnName="NumberPrimary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreferenceType">
+            <EntityTypeMapping TypeName="db_javsModel.PreferenceType">
+              <MappingFragment StoreEntitySet="PreferenceType">
+                <ScalarProperty Name="PreferenceType_ID" ColumnName="PreferenceType_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proceeding">
+            <EntityTypeMapping TypeName="db_javsModel.Proceeding">
+              <MappingFragment StoreEntitySet="Proceeding">
+                <ScalarProperty Name="Proceeding_ID" ColumnName="Proceeding_ID" />
+                <ScalarProperty Name="ProceedingMenu_ID" ColumnName="ProceedingMenu_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Orders" ColumnName="Orders" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProceedingMenu">
+            <EntityTypeMapping TypeName="db_javsModel.ProceedingMenu">
+              <MappingFragment StoreEntitySet="ProceedingMenu">
+                <ScalarProperty Name="ProceedingMenu_ID" ColumnName="ProceedingMenu_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedule">
+            <EntityTypeMapping TypeName="db_javsModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="Schedule_ID" ColumnName="Schedule_ID" />
+                <ScalarProperty Name="Master_ID" ColumnName="Master_ID" />
+                <ScalarProperty Name="Location_ID" ColumnName="Location_ID" />
+                <ScalarProperty Name="MasterType_ID" ColumnName="MasterType_ID" />
+                <ScalarProperty Name="StarDate" ColumnName="StarDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="AutoStart" ColumnName="AutoStart" />
+                <ScalarProperty Name="AutoStop" ColumnName="AutoStop" />
+                <ScalarProperty Name="Completed" ColumnName="Completed" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityRight">
+            <EntityTypeMapping TypeName="db_javsModel.SecurityRight">
+              <MappingFragment StoreEntitySet="SecurityRight">
+                <ScalarProperty Name="SecurityRight_ID" ColumnName="SecurityRight_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="db_javsModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Party_ID" ColumnName="Party_ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AccountDisable" ColumnName="AccountDisable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_GUILayout">
+            <EntityTypeMapping TypeName="db_javsModel.User_GUILayout">
+              <MappingFragment StoreEntitySet="User_GUILayout">
+                <ScalarProperty Name="User_GUILayout_ID" ColumnName="User_GUILayout_ID" />
+                <ScalarProperty Name="ParentUser_GUILayout_ID" ColumnName="ParentUser_GUILayout_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="GUILayout_ID" ColumnName="GUILayout_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Layout" ColumnName="Layout" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPreference">
+            <EntityTypeMapping TypeName="db_javsModel.UserPreference">
+              <MappingFragment StoreEntitySet="UserPreference">
+                <ScalarProperty Name="UserPreference_ID" ColumnName="UserPreference_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="PreferenceType_ID" ColumnName="PreferenceType_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab96fa45a70143388bfd6b1b8b056e8f" Name="Diagram1">
+        <EntityTypeShape EntityType="tmp_javsModel.inf_Event" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="tmp_javsModel.inf_Master" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tmp_javsModel.inf_Media" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="tmp_javsModel.inf_Session" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="tmp_javsModel.FK_inf_Event_inf_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="tmp_javsModel.FK_inf_Media_inf_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="tmp_javsModel.FK_inf_Session_inf_Master" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

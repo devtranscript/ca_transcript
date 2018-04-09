@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0ab01c0078a4a05815755f5b500a229" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="db_transcriptModel.fact_accion" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_aspx" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_especializa" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_estatus" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_estatus_material" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_estatus_qa" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_estatus_sesion" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_generos" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_tipo_rfc" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.fact_tipo_usuarios" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_caducidad_videos" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_caducidad_videos_dep" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_credenciales" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_credenciales_dep" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_empresa" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_fecha_transformacion" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_fecha_transformacion_dep" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_juzgados" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_juzgados_dep" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_log_videos" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_material" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_ruta_videos" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_ruta_videos_dep" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_salas" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_salas_dep" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_sepomex" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_sesion" Width="1.5" PointX="8.75" PointY="12.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_tribunal" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_tribunal_dep" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_usuarios" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="db_transcriptModel.inf_usuarios_dep" Width="1.5" PointX="14.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

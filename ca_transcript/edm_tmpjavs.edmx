@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="tmp_javsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="inf_Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="TimeStamp" Type="nvarchar" MaxLength="255" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="TypeId" Type="nvarchar" MaxLength="255" />
+          <Property Name="TypeCategoryId" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsSystemEvent" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsPrivate" Type="nvarchar" MaxLength="255" />
+          <Property Name="Identifier" Type="nvarchar" MaxLength="255" />
+          <Property Name="EventNotes" Type="nvarchar" MaxLength="255" />
+          <Property Name="id_control" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_Master">
+          <Key>
+            <PropertyRef Name="id_control" />
+          </Key>
+          <Property Name="id_control" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MasterId" Type="uniqueidentifier" />
+          <Property Name="Id" Type="nvarchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Department" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsSealed" Type="nvarchar" MaxLength="255" />
+          <Property Name="Exhibits" Type="nvarchar" MaxLength="255" />
+          <Property Name="id_estatus" Type="int" />
+          <Property Name="fecha_registro" Type="datetime" />
+          <Property Name="id_centro" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="inf_Media">
+          <Key>
+            <PropertyRef Name="MediaId" />
+          </Key>
+          <Property Name="MediaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" MaxLength="255" />
+          <Property Name="DeviceId" Type="nvarchar" MaxLength="255" />
+          <Property Name="Height" Type="nvarchar" MaxLength="255" />
+          <Property Name="Width" Type="nvarchar" MaxLength="255" />
+          <Property Name="Incomplete" Type="nvarchar" MaxLength="255" />
+          <Property Name="id_control" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inf_Session">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="EndDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="Location" Type="nvarchar" MaxLength="255" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="MasterGroups" Type="nvarchar" MaxLength="255" />
+          <Property Name="id_control" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_inf_Event_inf_Master">
+          <End Role="inf_Master" Type="Self.inf_Master" Multiplicity="1" />
+          <End Role="inf_Event" Type="Self.inf_Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_Master">
+              <PropertyRef Name="id_control" />
+            </Principal>
+            <Dependent Role="inf_Event">
+              <PropertyRef Name="id_control" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_Media_inf_Master">
+          <End Role="inf_Master" Type="Self.inf_Master" Multiplicity="1" />
+          <End Role="inf_Media" Type="Self.inf_Media" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_Master">
+              <PropertyRef Name="id_control" />
+            </Principal>
+            <Dependent Role="inf_Media">
+              <PropertyRef Name="id_control" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_Session_inf_Master">
+          <End Role="inf_Master" Type="Self.inf_Master" Multiplicity="1" />
+          <End Role="inf_Session" Type="Self.inf_Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_Master">
+              <PropertyRef Name="id_control" />
+            </Principal>
+            <Dependent Role="inf_Session">
+              <PropertyRef Name="id_control" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tmp_javsModelStoreContainer">
+          <EntitySet Name="inf_Event" EntityType="Self.inf_Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_Master" EntityType="Self.inf_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_Media" EntityType="Self.inf_Media" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inf_Session" EntityType="Self.inf_Session" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_inf_Event_inf_Master" Association="Self.FK_inf_Event_inf_Master">
+            <End Role="inf_Master" EntitySet="inf_Master" />
+            <End Role="inf_Event" EntitySet="inf_Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_Media_inf_Master" Association="Self.FK_inf_Media_inf_Master">
+            <End Role="inf_Master" EntitySet="inf_Master" />
+            <End Role="inf_Media" EntitySet="inf_Media" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_Session_inf_Master" Association="Self.FK_inf_Session_inf_Master">
+            <End Role="inf_Master" EntitySet="inf_Master" />
+            <End Role="inf_Session" EntitySet="inf_Session" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tmp_javsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="inf_Event">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TimeStamp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TypeId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TypeCategoryId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsSystemEvent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsPrivate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Identifier" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EventNotes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id_control" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="inf_Master" Relationship="Self.FK_inf_Event_inf_Master" FromRole="inf_Event" ToRole="inf_Master" />
+        </EntityType>
+        <EntityType Name="inf_Master">
+          <Key>
+            <PropertyRef Name="id_control" />
+          </Key>
+          <Property Name="id_control" Type="Guid" Nullable="false" />
+          <Property Name="MasterId" Type="Guid" />
+          <Property Name="Id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsSealed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Exhibits" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id_estatus" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="3" />
+          <Property Name="id_centro" Type="Guid" />
+          <NavigationProperty Name="inf_Event" Relationship="Self.FK_inf_Event_inf_Master" FromRole="inf_Master" ToRole="inf_Event" />
+          <NavigationProperty Name="inf_Media" Relationship="Self.FK_inf_Media_inf_Master" FromRole="inf_Master" ToRole="inf_Media" />
+          <NavigationProperty Name="inf_Session" Relationship="Self.FK_inf_Session_inf_Master" FromRole="inf_Master" ToRole="inf_Session" />
+        </EntityType>
+        <EntityType Name="inf_Media">
+          <Key>
+            <PropertyRef Name="MediaId" />
+          </Key>
+          <Property Name="MediaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Width" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Incomplete" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id_control" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="inf_Master" Relationship="Self.FK_inf_Media_inf_Master" FromRole="inf_Media" ToRole="inf_Master" />
+        </EntityType>
+        <EntityType Name="inf_Session">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="SessionId" Type="Guid" Nullable="false" />
+          <Property Name="StartDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EndDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MasterGroups" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="id_control" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="inf_Master" Relationship="Self.FK_inf_Session_inf_Master" FromRole="inf_Session" ToRole="inf_Master" />
+        </EntityType>
+        <Association Name="FK_inf_Event_inf_Master">
+          <End Role="inf_Master" Type="Self.inf_Master" Multiplicity="1" />
+          <End Role="inf_Event" Type="Self.inf_Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_Master">
+              <PropertyRef Name="id_control" />
+            </Principal>
+            <Dependent Role="inf_Event">
+              <PropertyRef Name="id_control" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_Media_inf_Master">
+          <End Role="inf_Master" Type="Self.inf_Master" Multiplicity="1" />
+          <End Role="inf_Media" Type="Self.inf_Media" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_Master">
+              <PropertyRef Name="id_control" />
+            </Principal>
+            <Dependent Role="inf_Media">
+              <PropertyRef Name="id_control" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inf_Session_inf_Master">
+          <End Role="inf_Master" Type="Self.inf_Master" Multiplicity="1" />
+          <End Role="inf_Session" Type="Self.inf_Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inf_Master">
+              <PropertyRef Name="id_control" />
+            </Principal>
+            <Dependent Role="inf_Session">
+              <PropertyRef Name="id_control" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tmp_javsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="inf_Event" EntityType="Self.inf_Event" />
+          <EntitySet Name="inf_Master" EntityType="Self.inf_Master" />
+          <EntitySet Name="inf_Media" EntityType="Self.inf_Media" />
+          <EntitySet Name="inf_Session" EntityType="Self.inf_Session" />
+          <AssociationSet Name="FK_inf_Event_inf_Master" Association="Self.FK_inf_Event_inf_Master">
+            <End Role="inf_Master" EntitySet="inf_Master" />
+            <End Role="inf_Event" EntitySet="inf_Event" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_Media_inf_Master" Association="Self.FK_inf_Media_inf_Master">
+            <End Role="inf_Master" EntitySet="inf_Master" />
+            <End Role="inf_Media" EntitySet="inf_Media" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inf_Session_inf_Master" Association="Self.FK_inf_Session_inf_Master">
+            <End Role="inf_Master" EntitySet="inf_Master" />
+            <End Role="inf_Session" EntitySet="inf_Session" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tmp_javsModelStoreContainer" CdmEntityContainer="tmp_javsEntities">
+          <EntitySetMapping Name="inf_Event">
+            <EntityTypeMapping TypeName="tmp_javsModel.inf_Event">
+              <MappingFragment StoreEntitySet="inf_Event">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeCategoryId" ColumnName="TypeCategoryId" />
+                <ScalarProperty Name="IsSystemEvent" ColumnName="IsSystemEvent" />
+                <ScalarProperty Name="IsPrivate" ColumnName="IsPrivate" />
+                <ScalarProperty Name="Identifier" ColumnName="Identifier" />
+                <ScalarProperty Name="EventNotes" ColumnName="EventNotes" />
+                <ScalarProperty Name="id_control" ColumnName="id_control" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_Master">
+            <EntityTypeMapping TypeName="tmp_javsModel.inf_Master">
+              <MappingFragment StoreEntitySet="inf_Master">
+                <ScalarProperty Name="id_control" ColumnName="id_control" />
+                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="IsSealed" ColumnName="IsSealed" />
+                <ScalarProperty Name="Exhibits" ColumnName="Exhibits" />
+                <ScalarProperty Name="id_estatus" ColumnName="id_estatus" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="id_centro" ColumnName="id_centro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_Media">
+            <EntityTypeMapping TypeName="tmp_javsModel.inf_Media">
+              <MappingFragment StoreEntitySet="inf_Media">
+                <ScalarProperty Name="MediaId" ColumnName="MediaId" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Incomplete" ColumnName="Incomplete" />
+                <ScalarProperty Name="id_control" ColumnName="id_control" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inf_Session">
+            <EntityTypeMapping TypeName="tmp_javsModel.inf_Session">
+              <MappingFragment StoreEntitySet="inf_Session">
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="MasterGroups" ColumnName="MasterGroups" />
+                <ScalarProperty Name="id_control" ColumnName="id_control" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

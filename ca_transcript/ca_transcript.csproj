@@ -10,6 +10,22 @@
     <AssemblyName>ca_transcript</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Administrador\Documents\contingencia\ca_transcript\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,9 +46,45 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3D7A73A142CEAAD82D245979CCEBF4AAB917DDE3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ca_transcript_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.VideoConverter, Version=1.1.2.0, Culture=neutral, PublicKeyToken=395ccb334978a0cd, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.VideoConverter.1.1.2\lib\net20\NReco.VideoConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.VideoInfo, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8f59ee36d2987295, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.VideoInfo.1.1.0\lib\net35\NReco.VideoInfo.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,8 +92,309 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BlobType.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_javs.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_javs.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_javs.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_javs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_javs.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="edm_tmpjavs.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_tmpjavs.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_tmpjavs.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_tmpjavs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_tmpjavs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_tmpjavs.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="edm_transcript.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_transcript.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_transcript.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="edm_transcript.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>edm_transcript.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Email.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_accion.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_aspx.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_especializa.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estatus.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estatus_material.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estatus_qa.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_estatus_sesion.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_generos.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_rfc.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fact_tipo_usuarios.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FileLibrary.cs" />
+    <Compile Include="Group.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupsSecurityRight.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayout.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_caducidad_videos.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_caducidad_videos_dep.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_credenciales.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_credenciales_dep.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_empresa.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_Event.cs">
+      <DependentUpon>edm_tmpjavs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_fecha_transformacion.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_fecha_transformacion_dep.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_juzgados.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_juzgados_dep.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_log_videos.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_Master.cs">
+      <DependentUpon>edm_tmpjavs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_material.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_Media.cs">
+      <DependentUpon>edm_tmpjavs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_ruta_videos.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_ruta_videos_dep.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_salas.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_salas_dep.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_sepomex.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_sesion.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_Session.cs">
+      <DependentUpon>edm_tmpjavs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_tribunal.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_tribunal_dep.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usuarios.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="inf_usuarios_dep.cs">
+      <DependentUpon>edm_transcript.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterGroup.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterGroupLoggedReason.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterType.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterTypesMasterGroup.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MasterTypesProceedingMenu.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pack.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Party.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartyBlob.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartysType.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartyType.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartyTypeAllowed.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Phone.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PreferenceType.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Proceeding.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProceedingMenu.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityRight.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserPreference.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_GUILayout.cs">
+      <DependentUpon>edm_javs.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="edm_transcript.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>edm_transcript.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="edm_tmpjavs.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>edm_tmpjavs.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ca_transcript_TemporaryKey.pfx" />
+    <EntityDeploy Include="edm_javs.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>edm_javs.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="edm_javs.edmx.diagram">
+      <DependentUpon>edm_javs.edmx</DependentUpon>
+    </None>
+    <None Include="edm_tmpjavs.edmx.diagram">
+      <DependentUpon>edm_tmpjavs.edmx</DependentUpon>
+    </None>
+    <None Include="edm_transcript.edmx.diagram">
+      <DependentUpon>edm_transcript.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="edm_javs.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edm_javs.edmx</DependentUpon>
+      <LastGenOutput>edm_javs.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="edm_javs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edm_javs.edmx</DependentUpon>
+      <LastGenOutput>edm_javs.cs</LastGenOutput>
+    </Content>
+    <Content Include="edm_tmpjavs.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edm_tmpjavs.edmx</DependentUpon>
+      <LastGenOutput>edm_tmpjavs.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="edm_tmpjavs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edm_tmpjavs.edmx</DependentUpon>
+      <LastGenOutput>edm_tmpjavs.cs</LastGenOutput>
+    </Content>
+    <Content Include="edm_transcript.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edm_transcript.edmx</DependentUpon>
+      <LastGenOutput>edm_transcript.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="edm_transcript.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>edm_transcript.edmx</DependentUpon>
+      <LastGenOutput>edm_transcript.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
